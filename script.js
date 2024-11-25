@@ -132,13 +132,193 @@
         // Utilizzare prompt() → metodo che fa visualizzare una finestra di pop-up per far inserire un dato all’utente
 
         // Mostriamo un prompt per chiedere il nome dell'utente
-        let text = prompt('Come ti chiami?');
+        // let text = prompt('Come ti chiami?');
 
         // Verifica se l'utente ha inserito qualcosa (non è null)
-        if (text) {
+        // if (text) {
             // Mostriamo il risultato nel paragrafo con id="user-input"
-            document.getElementById('user-input').innerText = `Ciao, ${text}! Benvenuto!`;
-        } else {
+        //     document.getElementById('user-input').innerText = `Ciao, ${text}! Benvenuto!`;
+        // } else {
             // Se l'utente non ha inserito nulla, mostra un messaggio di default
-            document.getElementById('user-input').innerText = "Ciao, utente sconosciuto!";
-        }
+        //     document.getElementById('user-input').innerText = "Ciao, utente sconosciuto!";
+        // }
+
+
+        //Es-7:
+
+
+        // let openingDays = [
+        //     {day: 'monday', from: '9.00', to: '18.00'},
+        //     {day: 'tuesday', from: '9.00', to: '18.00'},
+        //     {day: 'wednesday', from: '9.00', to: '18.00'},
+        //     {day: 'thursday', from: '9.00', to: '18.00'},
+        //     {day: 'saturday', from: '9.00', to: '18.00'},
+        //     {day: 'sunday', from: '9.00', to: '18.00'},
+        //   ];
+          
+          // Funzione che inserisce la lista dei giorni e orari nella pagina
+          // function displayOpeningHours() {
+            // Otteniamo il riferimento alla lista non numerata (ul) con id "openings"
+            // const ul = document.getElementById('openings');
+            
+            // Array di giorni della settimana per la visualizzazione
+            // const daysOfWeek = ['Lunedì', 'Martedì', 'Mercoledì', 'Giovedì', 'Sabato', 'Domenica'];
+            
+            // Iteriamo sull'array openingDays per creare gli item della lista
+            // openingDays.forEach((opening, index) => {
+              // Creiamo un nuovo elemento <li> per ogni giorno e orario
+              // const li = document.createElement('li');
+              
+              // Creiamo il testo da inserire nel <li> (giorno e orari)
+              // li.textContent = `${daysOfWeek[index]}: dalle ${opening.from} alle ${opening.to}`;
+              
+              // Aggiungiamo il <li> creato all'elemento <ul>
+              // ul.appendChild(li);
+            // });
+          // }
+          
+          // Chiamata della funzione per visualizzare gli orari di apertura
+          // displayOpeningHours();
+          
+      // Es-8:
+
+    //   function toggleColor() {
+    //     var title = document.querySelector('h1');  // Seleziona l'elemento h1
+    //     title.classList.toggle('color');  // Aggiunge o rimuove la classe 'color'
+    // }
+
+
+    // Es-9:
+
+    let list = [
+      { firstName: 'Harry', country: 'Stati Uniti d\'America', flag: 'us', age: 19, language: 'Python' },
+      { firstName: 'Kseniya', country: 'Francia', flag: 'fr', age: 29, language: 'JavaScript' },
+      { firstName: 'Jing', country: 'Spagna', flag: 'es', age: 39, language: 'Ruby' },
+      { firstName: 'Noa', country: 'Inghilterra', flag: 'gb', age: 40, language: 'Ruby' },
+      { firstName: 'Andrei', country: 'Germania', flag: 'de', age: 59, language: 'C' },
+      { firstName: 'Maria', country: 'Colombia', flag: 'co', age: 60, language: 'C' },
+      { firstName: 'Lukas', country: 'Giappone', flag: 'jp', age: 75, language: 'Python' },
+      { firstName: 'Chloe', country: 'Svizzera', flag: 'ch', age: 88, language: 'Ruby' },
+      { firstName: 'Viktoria', country: 'Argentina', flag: 'ar', age: 98, language: 'PHP' },
+      { firstName: 'Piotr', country: 'Italia', flag: 'it', age: 48, language: 'JavaScript' }
+  ];
+
+  const container = document.getElementById('cards-container');
+
+  list.forEach(person => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+
+      // Creazione del contenuto della card
+      card.innerHTML = `
+          <div class="flag">
+              <i class="flag-icon flag-icon-${person.flag}"></i>
+          </div>
+          <div class="info">
+              <h3>${person.firstName}</h3>
+              <p>Age: ${person.age}</p>
+              <p>Country: ${person.country}</p>
+          </div>
+          <div class="language">
+              <p>Language: ${person.language}</p>
+          </div>
+      `;
+      container.appendChild(card);
+  });
+
+  // Es-10:
+
+//   let list = [
+//     { id: 1, linkName: 'home', page: 'home.html', icon: 'bi bi-house-door' },
+//     { id: 2, linkName: 'chi siamo', page: 'chi-siamo.html', icon: 'bi bi-people' },
+//     { id: 3, linkName: 'servizi', page: 'servizi.html', icon: 'bi bi-bicycle' },
+//     { id: 4, linkName: 'categorie', page: 'categorie.html', icon: 'bi bi-tag' },
+//     { id: 5, linkName: 'blog', page: 'blog.html', icon: 'bi bi-newspaper' },
+//     { id: 6, linkName: 'contatti', page: 'contatti.html', icon: 'bi bi-send' }
+// ];
+
+// // Funzione per generare la navbar
+// function generateNavbar() {
+//     const container = document.getElementById('navbar-container');
+
+//     // Iteriamo sull'array 'list' per creare i link dinamicamente
+//     list.forEach(link => {
+//         // Creiamo un elemento <a> per ogni oggetto nell'array
+//         const linkElement = document.createElement('a');
+//         linkElement.href = link.page;
+
+//         // Creiamo l'elemento <i> per l'icona
+//         const iconElement = document.createElement('i');
+//         iconElement.setAttribute('class', link.icon);
+
+//         // Aggiungiamo l'icona e il nome del link
+//         linkElement.appendChild(iconElement);
+//         linkElement.appendChild(document.createTextNode(link.linkName));
+
+//         // Aggiungiamo il link alla navbar
+//         container.appendChild(linkElement);
+//     });
+// }
+
+// // Chiamata della funzione per generare la navbar
+// generateNavbar();
+
+  // Es-11:
+  // let navbar = document.querySelector('.navbar');
+
+  // // Aggiungiamo un event listener per lo scroll
+  // document.addEventListener('scroll', () => {
+  //     // Verifica se la pagina è stata scrollata più di 50px
+  //     if (window.scrollY > 50) {
+  //         // Aggiungi la classe 'scrolled' alla navbar quando scorre verso il basso
+  //         navbar.classList.add('scrolled');
+  //     } else {
+  //         // Rimuovi la classe 'scrolled' quando si scrolla verso l'alto
+  //         navbar.classList.remove('scrolled');
+  //     }
+  // });
+
+  // Es-12:
+
+//   function calculate() {
+//     // Ottieni i valori dagli input
+//     let num1 = parseFloat(document.getElementById('num1').value);
+//     let num2 = parseFloat(document.getElementById('num2').value);
+//     let operation = document.getElementById('operation').value;
+    
+//     // Verifica che i numeri siano validi
+//     if (isNaN(num1) || isNaN(num2) || operation === "") {
+//         alert("Per favore, inserisci numeri validi e seleziona un'operazione.");
+//         return;
+//     }
+
+//     // Calcola il risultato in base all'operazione selezionata
+//     let result;
+//     switch (operation) {
+//         case 'sum':
+//             result = num1 + num2;
+//             break;
+//         case 'subtraction':
+//             result = num1 - num2;
+//             break;
+//         case 'multiplication':
+//             result = num1 * num2;
+//             break;
+//         case 'division':
+//             if (num2 === 0) {
+//                 alert("Non puoi dividere per zero!");
+//                 return;
+//             }
+//             result = num1 / num2;
+//             break;
+//         default:
+//             alert("Seleziona un'operazione.");
+//             return;
+//     }
+
+//     // Mostra il risultato e svuota i campi input
+//     document.getElementById('total').textContent = `Totale: ${result}`;
+//     document.getElementById('num1').value = '';
+//     document.getElementById('num2').value = '';
+//     document.getElementById('operation').value = '';
+// }
